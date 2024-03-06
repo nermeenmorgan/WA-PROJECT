@@ -68,7 +68,7 @@ const Ownerr = mongoose.model("ownerInfo");
 const Clientt = mongoose.model("clientInfo");
 //signup for both
 app.post("/registerOwner", async (req, res) => {
-  const { fname, lname, email, password } = req.body;
+  const { name, email, phone, password } = req.body;
   const encryptedPassword= await bcrypt.hash(password,10)
   try {
     const oldOwner = await Ownerr.findOne({ email });
@@ -76,8 +76,8 @@ app.post("/registerOwner", async (req, res) => {
      return res.send({ error: "owner with the same Email address already exists" });
     }
     await Ownerr.create({
-      fname,
-      lname,
+      name,
+      phone,
       email,
       password:encryptedPassword,
     });
@@ -88,7 +88,7 @@ app.post("/registerOwner", async (req, res) => {
 });
 
 app.post("/registerClient", async (req, res) => {
-    const { fname, lname, email, password } = req.body;
+  const { name, email, phone, password } = req.body;
     const encryptedPassword= await bcrypt.hash(password,10)
     try {
       const oldClient = await Clientt.findOne({ email });
@@ -96,8 +96,8 @@ app.post("/registerClient", async (req, res) => {
         res.send({ error: "Student with the same Email address already exists" });
       }
       await Clientt.create({
-        fname,
-        lname,
+        name,
+        phone,
         email,
         password:encryptedPassword,
       });

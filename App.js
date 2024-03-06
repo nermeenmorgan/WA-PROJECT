@@ -56,7 +56,7 @@ import CustomGreenButton from './src/components/shared/greenBtn';
 import { NativeBaseProvider } from 'native-base';
 import CustomWhiteButton from './src/components/shared/whitebtn';
 import Router from './src/routes/router';
-import { firstStep } from './src/apis/paymob';
+// import { firstStep } from './src/apis/paymob';
 // Some other file
 
 // import paymobIntegration from './path/to/paymobIntegration';
@@ -65,15 +65,15 @@ import { firstStep } from './src/apis/paymob';
 const App = () => {
   // firstStep(); // Call the function
   // Example of calling firstStep in App.js
-async function fetchData() {
-  await firstStep();
-}
-fetchData();
+// async function fetchData() {
+//   await firstStep();
+// }
+// fetchData();
 
-  const handleSignIn = () => {
-    // Handle sign-in logic here
-    console.log('Sign-in button pressed');
-  };
+  // const handleSignIn = () => {
+  //   // Handle sign-in logic here
+  //   console.log('Sign-in button pressed');
+  // };
 
   return (
         <NativeBaseProvider>
