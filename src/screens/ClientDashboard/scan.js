@@ -40,8 +40,8 @@ export default function Scan({navigation}) {
 </Text>
   <TouchableOpacity onPress={handleImageClick}>
 
-<Image source={require('../../../assets/scan.png')}/>
-</TouchableOpacity>
+  <Image source={require('../../../assets/scan.png')}/>
+  </TouchableOpacity>
       {/* <Camera
         style={styles.camera}
         type={type}

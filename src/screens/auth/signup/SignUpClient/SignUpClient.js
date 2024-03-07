@@ -19,7 +19,7 @@ const SignUpClient = ({navigation}) => {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-  
+   
 
     axios.post("http://localhost:5001/registerClient", initialVal)
       .then(response => {

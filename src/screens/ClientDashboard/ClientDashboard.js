@@ -378,19 +378,24 @@ const [isclicked, setisclicked] = useState(false)
     </View>
     <View style={{
         backgroundColor:'white',
-    width:SIZES.width,
-    height:SIZES.height -720,
+        width:SIZES.width,
+        height:SIZES.height -720,
         justifyContent:'center',
         alignItems:'center',
-paddingBottom:85,
+        paddingBottom:85,
         marginBottom:200,
         textAlign:'center'
     }}>
         
-    <CustomWhiteButton  label={'Payer avec Orange Money'} onPress={()=>{
+    {/* <CustomWhiteButton  label={'Payer avec Orange Money'} onPress={()=>{
         navigation.navigate('scan')
+    }}> */}
+
+    <CustomWhiteButton label={'Payer avec Orange Money'} onPress={() => {
+      navigation.navigate('payment')
     }}>
-    </CustomWhiteButton>
+    </CustomWhiteButton> 
+
     </View>
  
     </>

@@ -33,7 +33,6 @@ export const firstStep = async () => {
     }
 };
 
-
 export const secondStep = async (token) => {
     try {
         let data = {
@@ -63,7 +62,6 @@ export const secondStep = async (token) => {
         console.error('Error in secondStep:', error);
     }
 };
-
 
 export const thirdStep= async (token,id)=>{
     let data= {
@@ -104,7 +102,6 @@ let tokenn = response.token;
 OrangePayment('01010101010',tokenn )
 }
 
-
 export const OrangePayment = async (walletMobileNumber, newToken) => {
     try {
         let data = {
@@ -129,6 +126,3 @@ export const OrangePayment = async (walletMobileNumber, newToken) => {
         console.error('Error in fourthStep:', error);
     }
 };
-
-
-
