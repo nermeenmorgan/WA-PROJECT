@@ -25,9 +25,9 @@ const SignUpClient = ({navigation}) => {
       .then(response => {
         // Handle the response from the server
         console.log(response);
-if(response.data.error ==='Student with the same Email address already exists'){
-  alert("Student with the same Email address already exists");
-}
+        if(response.data.error ==='Student with the same Email address already exists'){
+          alert("Student with the same Email address already exists");
+        }
         if(response.data.status=="ok"){
           alert("Register successful");
           
