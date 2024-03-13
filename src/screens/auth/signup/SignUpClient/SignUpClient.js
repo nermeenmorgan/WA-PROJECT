@@ -21,7 +21,7 @@ const SignUpClient = ({navigation}) => {
     e.preventDefault();
    
 
-    axios.post("http://localhost:5001/registerClient", initialVal)
+    axios.post("http://localhost:5001/registerOwner", initialVal)
       .then(response => {
         // Handle the response from the server
         console.log(response);
