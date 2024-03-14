@@ -6,7 +6,7 @@ const SuccessPage = () => {
         <View style={styles.container}>
         <Image
         source={require('../../assets/right.png')}
-        alt="line"
+        alt="right icon"
         // style={{
         //   width: SIZES.width - 80,
         //   height: 10,
