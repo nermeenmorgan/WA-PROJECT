@@ -26,40 +26,6 @@ mongoose
   .catch((e) => console.log(e));
 //   //multer configuration and managing pdfs of answers that clients submit
 
-//   const multer  = require("multer");
-//   const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, './ansFiles')
-//     },
-//     filename: function (req, file, cb) {
-//       const uniqueSuffix = Date.now() 
-//       cb(null, uniqueSuffix+file.originalname)
-//     }
-//   })
-//   require("./ansDetails")
-//   const ansSchema = mongoose.model("ansDetails")
-//   const upload = multer({ storage: storage })
-// app.post("/ansFiles",upload.single("file") ,async(req,res)=>{
-// console.log(req.file)
-// const title= req.body.title;
-// const fileName= req.file.filename;
-// try {
-//   await ansSchema.create({title:title, pdf:fileName});
-//   res.send({status:"ok"});
-// } catch (error) {
-//   res.json({status:error})
-// }
-// });
-// app.get("/get-ans-pdfs", async(req,res)=>{
-//   try {
-//     ansSchema.find({}).then(data=>{
-//       res.send({status:"ok", data:data})
-//     })
-//   } catch (error) {
-    
-//   }
-// })
-
 
 //Managing Data of clients and owners -USERS-
 require("./clientDetails");

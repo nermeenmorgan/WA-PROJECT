@@ -77,42 +77,52 @@ import React, { useState, useRef } from 'react';
 import { View, TextInput, Button, Alert } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 import ViewShot from 'react-native-view-shot';
+import CustomWhiteButton from '../../components/shared/whitebtn';
 
 const OwnerDashboard = () => {
-  const [url, setUrl] = useState('');
+  // const [url, setUrl] = useState('');
+  const [phone, setPhone] = useState('');
   const [generatedQRCode, setGeneratedQRCode] = useState(null);
   const viewShotRef = useRef(null);
 
   const generateQRCode = () => {
-    if (!url) {
-      Alert.alert('Error', 'Please enter a valid URL');
+    const guineaPhoneNumberRegex = /^(00224|\+224)?[6-7][0-9]{7}$/;
+
+    if (!guineaPhoneNumberRegex.test(phone)) {
+      Alert.alert('Invalid Phone Number', 'Please enter a valid Guinea phone number.');
       return;
     }
+    // if (!url) {
+    //   Alert.alert('Error', 'Please enter a valid URL');
+    //   return;
+    // }
 
-    setGeneratedQRCode(url);
+    // setGeneratedQRCode(url);
   };
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      {!generatedQRCode ? (
+      {/* {!generatedQRCode ? ( */}
         <>
           <TextInput
-            placeholder="Enter URL"
+          value={phone}
+            placeholder="Enter your number"
+            keyboardType='numeric'
             style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10, paddingHorizontal: 10 }}
-            onChangeText={(text) => setUrl(text)}
+            onChangeText={(value) => setPhone(value)}
           />
-          <Button title="Generate QR Code" onPress={generateQRCode} />
+          <CustomWhiteButton  label="Generate QR Code"  onPress={generateQRCode} />
         </>
-      ) : (
+      {/* ) : ( */}
         <>
-          <ViewShot ref={viewShotRef} options={{ format: 'png', quality: 1 }}>
+          {/* <ViewShot ref={viewShotRef} options={{ format: 'png', quality: 1 }}>
             <View style={{ padding: '4%' }}>
               <QRCode value={generatedQRCode} size={200} />
-            </View>
-          </ViewShot>
+            </View> */}
+          {/* </ViewShot> */}
           {/* <Button title="Download QR Code" onPress={handleDownload} /> */}
         </>
-      )}
+      {/* )} */}
     </View>
   );
 };

@@ -11,7 +11,7 @@ const SignInOwner = ({ navigation }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:5001/login-owner', { 
+      const response = await fetch('http://192.168.1.4:5001/login-owner', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,14 +56,18 @@ const SignInOwner = ({ navigation }) => {
         keyboardType="email-address"
         placeholderTextColor={'black'}
         padding={3}
-        onChangeText={setEmail} // Add onChangeText to update email state
+        value={email}
+        name='email'
+        onChangeText={setEmail} 
       />
 
       <Input
+      name='password'
+      value={password}
         placeholder="Mot de passe"
         secureTextEntry
         placeholderTextColor={'black'}
-        onChangeText={setPassword} // Add onChangeText to update password state
+        onChangeText={setPassword} 
       />
       
       <View style={{ height: 50 }}></View>
