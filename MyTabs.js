@@ -10,6 +10,7 @@ import AppIntroSlider from "react-native-app-intro-slider";
 import { View, Text, Image } from 'react-native';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from '@react-navigation/native';
+import SuccessPage from "./src/screens/SuccessPage";
 
 const slides = [
   {
@@ -187,6 +188,7 @@ export default function MyTabs() {
             <Stack.Screen name="Payment" component={PaymentComponent}  />
             <Stack.Screen name="Sign up" component={SignUp} />
             <Stack.Screen name="Sign in" component={SignIn} />
+            {/* <Stack.Screen name="Success page" component={SuccessPage} /> */}
           </Stack.Navigator>
         )}
       </Tab.Screen>

@@ -37,6 +37,7 @@ import Onboarding from '../screens/onboarding/onboarding';
 import Scan from '../screens/ClientDashboard/scan';
 import Scanner from '../screens/ClientDashboard/scanner';
 import PaymentComponent from '../screens/PaymentComponent';
+import SuccessPage from '../screens/SuccessPage';
     
 const Stack = createStackNavigator();
 
@@ -57,6 +58,7 @@ const Router = () => {
         <Stack.Screen  name="scan" component={Scan} />
         <Stack.Screen  name="Scanner" component={Scanner} />
         <Stack.Screen  name="payment" component={PaymentComponent} />
+        <Stack.Screen  name="SuccessPage" component={SuccessPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
