@@ -12,8 +12,9 @@ const SignUpClient = ({ navigation }) => {
   const [password, setPassword] = useState('');
 
   const handleSignUp = async () => {
+    console.log('Phone number:', phone); 
     const guineaPhoneNumberRegex = /^(00224|\+224)?[6-7][0-9]{7}$/;
-
+    console.log(guineaPhoneNumberRegex.test('00224666123456'));
     if (!guineaPhoneNumberRegex.test(phone)) {
       Alert.alert('Invalid Phone Number', 'Please enter a valid Guinea phone number.');
       return;
