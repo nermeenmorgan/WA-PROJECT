@@ -37,6 +37,22 @@ export const initPayment = async (amount) => {
 
             const response = await request.json();
             //TODO: enregistrement dans la collection transaction les données (eg: trans_id, payment_token: response.data.payment_token)
+            const transactionDetails = {
+                id: response.data.id,
+                user_id: 'user_id',
+                amount: response.data.amount, // Example amount
+                trans_id: trans_id,
+                payment_token:  response.data.payment_token,
+                status: response.data.status
+            };
+            
+            sendTransactionDetails(transactionDetails)
+                .then(response => {
+                    console.log('Transaction details sent successfully:', response);
+                })
+                .catch(error => {
+                    console.error('Error sending transaction details:', error);
+                });
             console.log('response.data ===>>>', response);
             return response.data.payment_url
     } catch (error) {

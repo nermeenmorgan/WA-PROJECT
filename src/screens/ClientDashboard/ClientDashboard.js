@@ -1,23 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   StyleSheet,
   Text,
   View,
-  ActivityIndicator,
   Animated,
   Linking,
-  TouchableOpacity,
-  Pressable,
+
 } from 'react-native';
-import { Box, Button, Center,VStack } from 'native-base';
-// import { Ionicons } from '@expo/vector-icons';
-import { Progress } from 'native-base';
-import { useContext } from 'react';
+
 import CustomWhiteButton from '../../components/shared/whitebtn';
 import { SIZES } from '../../constants/theme';
-// import { ThemeContext } from '../ThemeContext.js/themeContext';
 const ClientDashboard = ({ navigation }) => {
-//   const { isDarkTheme } = useContext(ThemeContext);
   const lightStyles = StyleSheet.create({
     container: {
       height:SIZES.height- 160,
@@ -38,8 +31,8 @@ const ClientDashboard = ({ navigation }) => {
       left: 0,
       right: 0,
       bottom: 0,
-      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the transparency as needed
-      zIndex: 1, // Adjust the zIndex to make it appear above other components
+      backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+      zIndex: 1, 
     },
 
     headerText: {
@@ -61,7 +54,6 @@ const ClientDashboard = ({ navigation }) => {
       marginRight: 10,
       width: 100,
       fontWeight:'700'
-    //   fontFamily: 'PlayfairDisplay-Bold',
     },
     detailText: {
       flex: 1,
@@ -77,10 +69,7 @@ const [isclicked, setisclicked] = useState(false)
 
   const styles =  lightStyles;
 
-// const handleViewClick = () => {
-//   setIsClicked(!isClicked);
-// }; 
-  
+
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const handleEmailPress = () => {
     const email = 'Leanne@gmail.com';
@@ -134,16 +123,10 @@ const [isclicked, setisclicked] = useState(false)
             flexDirection: 'row',
           }}
         >
-          {/* <Ionicons
-            style={{ marginRight: 5 }}
-            name="person-circle-outline"
-            color="white"
-            size={30}
-          /> */}
+          
           <Text
             style={{
               color: 'black',
-            //   fontFamily: 'PlayfairDisplay-Bold',
               fontSize: 17,
               fontWeight:'bold'
             }}
@@ -213,22 +196,7 @@ const [isclicked, setisclicked] = useState(false)
       <Text style={{"fontWeight":'bold','textAlign':'center', 'fontSize':20}}>
       Bénéficiez d'un processus de paiement fluide et sans tracas pour votre chauffeur avec Orange Money.
       </Text>
-        {/* <Center w="100%">
-          <Box w="90%" maxW="400">
-            <VStack space="md">
-              <VStack mx="4" space="sm">
-                <Text style={{ fontSize: 12 }}>Last 7 days</Text>
-                <Progress colorScheme="primary" value={35} />
-                <Text style={{ fontSize: 12 }}>Last 14 days</Text>
-                <Progress colorScheme="secondary" value={45} />
-                <Text style={{ fontSize: 12 }}>Last 30 days</Text>
-                <Progress colorScheme="emerald" value={55} />
-                <Text style={{ fontSize: 12 }}>Last 2 months</Text>
-                <Progress colorScheme="warning" value={65} />
-              </VStack>
-            </VStack>
-          </Box>
-        </Center> */}
+     
       </View>
       
       <View style={{ position: 'relative', height: 80, width: '100%' }}>
@@ -249,7 +217,6 @@ const [isclicked, setisclicked] = useState(false)
               color: 'black',
               fontWeight: 'bold',
               textAlign: 'center',
-            //   marginLeft: 150,
               marginTop: 6,
               fontSize:17
             }}
@@ -277,7 +244,6 @@ const [isclicked, setisclicked] = useState(false)
           }}
         >
 
-{/* <TouchableOpacity onPress={handleViewClick}> */}
 
           <View 
             style={{
@@ -299,7 +265,6 @@ const [isclicked, setisclicked] = useState(false)
             }}
           >
             <Text style={{'textAlign':'center'}}>Scanner le code QR</Text>
-            {/* {isClicked && <View style={styles.transparentLayer} />} */}
 
           </View>
 
@@ -324,14 +289,7 @@ const [isclicked, setisclicked] = useState(false)
               elevation: 5,
             }}
           >
-            {/* <Ionicons
-            
-            
-              name="call"
-              size={clickedIcon === 'phone' ? 40 : 30} // Apply bigger size if the clicked icon's name is 'mail'
-              color="#0d0f3a"
-
-            /> */}
+          
             <Text style={{'textAlign':'center', 
             
             }}>Entrez le montant</Text>
@@ -357,19 +315,7 @@ const [isclicked, setisclicked] = useState(false)
               elevation: 5,
             }}
           >
-            {/* <Ionicons
-              onPress={() => {
-               
-                setClickedIcon('web');
-                Linking.openURL(
-                  'https://abtei-st-hildegard.de/hildegard-von-bingen/'
-                );
-              }}
-              name="globe"
-              size={clickedIcon === 'web' ? 40 : 30} 
-              color="#0d0f3a"
-              
-            /> */}
+           
             <Text style={{'textAlign':'center'}}>Confirmez votre paiement</Text>
           </View>
         </View>
@@ -387,9 +333,6 @@ const [isclicked, setisclicked] = useState(false)
         textAlign:'center'
     }}>
         
-    {/* <CustomWhiteButton  label={'Payer avec Orange Money'} onPress={()=>{
-        navigation.navigate('scan')
-    }}> */}
 
     <CustomWhiteButton label={'Payer avec Orange Money'} onPress={() => {
       navigation.navigate('payment')

@@ -174,7 +174,21 @@ try {
         }
       });
 
-
+      //transaction collection 
+      require("./transactionDetails");
+      const Transaction = mongoose.model("transactionInfo");
+app.post("/transaction", async (req, res) => {
+   
+  const { id, user_id, amount, trans_id, payment_token,status} = req.body;
+ try{
+    await Transaction.create({
+      id, user_id, amount, trans_id, payment_token,status
+    });
+   return res.send({ status: "ok" });
+  } catch (e) {
+  return  res.send({ status: "error" });
+  }
+});
 app.listen(5001, () => {
   console.log("server is working");
 });
