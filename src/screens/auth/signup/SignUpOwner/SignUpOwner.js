@@ -104,14 +104,6 @@ const SignUpOwner = ({ navigation }) => {
         </TouchableOpacity>
     
       </View>
-      <TouchableOpacity onPress={()=>{  navigation.navigate('OwnerDashboard');}}>
-        <Text   style={{
-              color: COLORS.greenColor,
-              textDecorationLine: 'underline',
-              fontWeight: 'bold',
-              marginLeft: 5,
-            }}>Skip Registration</Text>
-      </TouchableOpacity>
     </Container>
   );
 };
